@@ -11,21 +11,15 @@ export default function App() {
   const [files, setFiles] = useState([]);
   const [getdata, setGetTata] = useState('');
   let [loadingInProgress, setLoading] = useState(true);
-  // const [showButton, setShowButton] = useState(false);
 
-  // const handleFileChange = (e) =>{
-  //   if(e.target.files){
-  //     setFiles(e.target.files)
-  //   }
-  // }
- 
+
   const sendData = async (formData) => {
     await axios.post('url', { formData }, {
-      headers: { 'Content-Type': 'multipart/form-data'}
-     
- 
+      headers: { 'Content-Type': 'multipart/form-data' }
+
+
     })
-    .then(response => setGetTata(response))
+      .then(response => setGetTata(response))
   }
 
   const onZipUpdate = (metadata) => {
@@ -61,49 +55,27 @@ export default function App() {
       })
       .catch((e) => console.log(e));
   };
-  // if (progress = 100) {
-  //   // btn.display = 'block'
-  //   // setShowButton(true);
-  // }
-
-  
 
   return (
     <div className="contener">
-
-      <div classname="folder">
-
-      <h1 className="h1">Folder upload</h1>
-      <h2 classname="h2">Select a folder to send to train the model</h2>
-
-      <div className="input-app">
-          <input ref={inputRef} type="file" webkitdirectory="true" onChange={(e) => { setFiles(e.target.value); onZip() }} />
+      <div className="title">
+        <h1 className="h1">Folder upload</h1>
+        <h2 classname="h2">Select a folder to send to train the model</h2>
       </div>
 
-    </div>
+      <div className="folder">
+        <input className="input-app" ref={inputRef} type="file" webkitdirectory="true" onChange={(e) => { setFiles(e.target.value); onZip() }} />
+      </div>
 
 
-
-
-
-
-
-
-    
-      {console.log({ files })}
-      {/* {files && ( */}
-      <div>
-
-        {/* <div>
-            <button onClick={console.log(files)}>gfhfh</button>
-            <button onClick={onZip}>zip {files.length} files</button>
-          </div> */}
-        <progress max="100" value={progress}>
-          {/* {progress?.toFixed(2)}%{" "}} */}
+      <div className="div-lodeng">
+        <progress className="lodeng" max="100" value={progress}>
+          {progress.toFixed(2)%{ }}
         </progress>
-        {/* <button className="btn" style={{ display: 'none' }}>tast</button> */}
+
 
       </div>
     </div>
+
   );
 }

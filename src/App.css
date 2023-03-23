@@ -1,19 +1,46 @@
-.contener {
+
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+ .contener { 
+  height: 100vh;
   text-align: center;
   justify-content: center;
   align-items: center;
- 
+  background-image: url(./ירוחם/Yeruham_Lake.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: aqua;
+} 
+.title{
+  position: relative;
+  top: 35px;
 }
-.input-app{
-height: 250px;
-width: 111%;
-  
+ .input-app{
+  left: 45px;
+  position: relative;
+  top: 200px;
+  color: white;
 }
 
 .folder{
   
-  background-color: aqua;
-  display: flex;
-  top: 15px;
-  
+  position: relative;
+ 
+} 
+
+.div-lodeng{
+  position: relative;
+    top: 200px;
+}
+.lodeng{
+  height: 50px;
+  width: 700px;
+}
+.file{
+  color: aqua;
 }
